@@ -1,7 +1,14 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const flightUserSchema = new mongoose.Schema(
     {
+        userId :
+        {
+            type : Number,
+            required : true,
+            unique : true
+
+        },
         username: {
             type: String,
             required: true,
@@ -27,4 +34,4 @@ const flightUserSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("flightUsers", flightUserSchema)
+module.exports = mongoose.model("flightUsers", flightUserSchema);
