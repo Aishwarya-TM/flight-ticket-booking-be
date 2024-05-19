@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const { adminLogin, addFlight, removeFlight, getAllBookingDetails } = require('../controllers/adminController')
+const { adminLogin, addFlight, removeFlight, getAllBookingDetails, getAllFlightDetails ,getAllUserDetails} = require('../controllers/adminController')
 
-router.post('/admin/login', adminLogin)
-router.post('/admin/add-flight', addFlight)
-router.delete('/admin/remove-flight/:flightId', removeFlight)
-router.get('/admin/bookings', getAllBookingDetails)
+router.post('/login', adminLogin)
+router.post('/add', addFlight)
+router.delete('/remove/:flightNumber', removeFlight)
+router.get('/bookings', getAllBookingDetails)
+router.get('/get',getAllFlightDetails)
+router.get('/users',getAllUserDetails)
 
 module.exports = router
